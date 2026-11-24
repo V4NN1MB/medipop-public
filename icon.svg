@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Medipop">
+  <title>Medipop</title>
+  <rect width="1024" height="1024" fill="#E4232D"/>
+  <rect x="302" y="238" width="456" height="584" rx="44" fill="#B5161F"/>
+  <rect x="284" y="220" width="456" height="584" rx="44" fill="#FFFFFF"/>
+  <line x1="356" y1="236" x2="356" y2="788" stroke="#E6E6EC" stroke-width="10" stroke-linecap="round"/>
+  <rect x="644" y="220" width="36" height="584" fill="#C91A25"/>
+  <path d="M500 612 C 410 548, 384 486, 398 444 C 414 398, 472 392, 500 440 C 528 392, 586 398, 602 444 C 616 486, 590 548, 500 612 Z" fill="#E4232D"/>
+</svg>

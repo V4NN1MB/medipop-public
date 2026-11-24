@@ -1,0 +1,23 @@
+# medipop.app: sito statico (solo HTML e CSS), nessuno script, nessun
+# modulo, nessun cookie. Le intestazioni sotto lo dicono anche al browser.
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_headers.c>
+  # Solo risorse di questo sito; nessuno script, nessun iframe, nessun modulo.
+  Header always set Content-Security-Policy "default-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "no-referrer"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # HSTS e il passaggio obbligato a HTTPS si accendono quando il certificato
+  # di medipop.app e' attivo (vedi README).
+</IfModule>
+
+# I file di servizio del repository non si servono.
+<FilesMatch "^(README\.md|LICENSE|\.git.*)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git

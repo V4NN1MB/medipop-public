@@ -1,0 +1,75 @@
+/* Medipop - sito statico. Nessuna risorsa esterna, nessun JavaScript. */
+:root {
+  --bg: #ffffff;
+  --text: #1c1c22;
+  --muted: #55555f;
+  --line: #deded8;
+  --card: #f6f6f3;
+  --accent: #e4232d;      /* rosso del marchio: solo come filetto e dettaglio */
+  --link: #b5161f;        /* rosso scuro: contrasto 7:1 su bianco per il testo */
+  --focus: #1c1c22;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141416;
+    --text: #ececf0;
+    --muted: #b0b0ba;
+    --line: #34343a;
+    --card: #1e1e22;
+    --link: #ff8a90;
+    --focus: #ececf0;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+header.site { border-bottom: 4px solid var(--accent); padding: 0.9rem 0; }
+header.site .wrap { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+.brand svg { width: 2.25rem; height: 2.25rem; border-radius: 0.5rem; flex: none; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+nav a { color: var(--link); }
+main { padding: 1.5rem 0 3rem; }
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0.5rem 0 1rem; }
+h2 { font-size: 1.35rem; line-height: 1.3; margin: 2rem 0 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1.1rem; margin: 1.4rem 0 0.3rem; }
+p, ul, ol, dl { margin: 0.6rem 0; }
+ul, ol { padding-left: 1.4rem; }
+li { margin: 0.3rem 0; }
+a { color: var(--link); text-underline-offset: 0.15em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+.lead { font-size: 1.2rem; color: var(--text); }
+.note, .card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.4rem;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+.muted { color: var(--muted); font-size: 0.95rem; }
+details { border: 1px solid var(--line); border-radius: 0.4rem; margin: 0.6rem 0; background: var(--card); }
+summary { cursor: pointer; padding: 0.7rem 1rem; font-weight: 600; }
+details > :not(summary) { padding: 0 1rem; }
+details > :last-child { padding-bottom: 0.8rem; }
+table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.97rem; }
+th, td { text-align: left; vertical-align: top; border: 1px solid var(--line); padding: 0.45rem 0.6rem; }
+th { background: var(--card); }
+.tablewrap { overflow-x: auto; }
+footer.site { border-top: 1px solid var(--line); padding: 1.25rem 0 2rem; color: var(--muted); font-size: 0.95rem; }
+footer.site a { color: var(--link); }
+.skip { position: absolute; left: -999px; top: 0; background: var(--bg); color: var(--text); padding: 0.5rem 1rem; }
+.skip:focus { left: 0.5rem; top: 0.5rem; z-index: 10; }
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.6rem; }
+}
+
+/* Didascalia delle tabelle allineata a sinistra (niente stili in linea: la CSP li blocca). */
+.caption-left { text-align: left; }

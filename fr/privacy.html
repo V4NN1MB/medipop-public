@@ -43,7 +43,7 @@
   <p>Medipop est développée par Vanni M., développeur individuel. Contact pour la confidentialité et l'assistance : <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>Les données que vous saisissez dans l'app</h2>
-  <p>Medipop conserve ce que vous écrivez : personnes et animaux, maladies, consultations, traitements, vaccinations, médicaments achetés, notes et, à partir de la version 1.1, certificats médicaux avec les photos de leurs pages et cartes avec les photos de leurs deux faces. Ce sont des données de santé, et l'app les traite donc avec un soin particulier :</p>
+  <p>Medipop conserve ce que vous écrivez : personnes et animaux, maladies, consultations, traitements, vaccinations, médicaments achetés, notes et, à partir de la version 1.1, certificats médicaux avec les photos de leurs pages, cartes avec les photos de leurs deux faces et, à partir de la version 1.2, ordonnances avec les photos de leurs pages et boîtes de la pharmacie familiale avec leur photo. Ce sont des données de santé, et l'app les traite donc avec un soin particulier :</p>
   <ul>
     <li>elles restent <strong>uniquement sur votre téléphone</strong>, dans une base de données chiffrée (AES-256, SQLCipher) ;</li>
     <li>l'app <strong>n'a pas accès à internet</strong> (elle n'a pas l'autorisation de se connecter) et n'a ni compte ni serveur ;</li>
@@ -81,15 +81,26 @@
   <h3>Puce des animaux (à partir de la version 1.1)</h3>
   <p>Pour lire le numéro de puce d'un animal, vous pouvez photographier son passeport ou l'étiquette à code-barres. La photo sert uniquement à lire le numéro et n'est pas conservée : seul le numéro reste, et c'est vous qui le vérifiez.</p>
 
+  <h3>Ordonnances (à partir de la version 1.2)</h3>
+  <p>À partir de la version 1.2, vous pouvez conserver des ordonnances dans Medipop : vous photographiez les pages ou importez un PDF. Les mêmes règles que pour les certificats s'appliquent : les pages sont nettoyées de leurs données cachées et chiffrées une par une ; le texte et les codes-barres se lisent sur le téléphone, sans internet, et rien n'est envoyé à personne. Medipop propose la date, le médecin, le numéro de l'ordonnance, la validité et les médicaments, et c'est vous qui les confirmez ou les corrigez. Quand vous partagez une ordonnance en PDF, le PDF est hors de Medipop et n'est pas chiffré : celui qui le reçoit peut le lire.</p>
+
+  <h3>Pharmacie familiale (à partir de la version 1.2)</h3>
+  <p>Pour chaque boîte, Medipop conserve : le médicament, à qui elle est, la date de péremption, le lot, ce qu'il en reste, l'endroit où vous la rangez et, si vous le voulez, une photo, nettoyée de ses données cachées et chiffrée comme les autres. Le petit code carré imprimé sur la boîte et la date de péremption imprimée se lisent sur le téléphone, sans internet. Tout reste sur le téléphone, dans la base de données chiffrée. Les avis de péremption sont des notifications du téléphone avec un texte général, qui ne nomme pas le médicament.</p>
+
+  <h3>Notices et sites officiels (à partir de la version 1.2)</h3>
+  <p>Medipop ne contient aucune notice, et l'app elle-même n'a pas d'accès au réseau. Le bouton « Notice (site officiel) » ne fait pas se connecter l'app : il demande au navigateur du téléphone d'ouvrir le site d'une agence publique des médicaments (AIFA, Swissmedic, AEMPS, la base de données publique française des médicaments ou EMA), qui est un tiers. Avant de l'ouvrir, Medipop vous le dit. Ce site reçoit ce que reçoit tout site : la page demandée, c'est-à-dire celle du médicament, et votre adresse IP, et il les traite selon ses propres règles. Medipop n'ajoute rien sur vous ni sur votre famille.</p>
+
   <h2>Les sauvegardes</h2>
   <p>Une sauvegarde est un fichier chiffré <code>.medipop</code>. C'est vous qui la créez, et c'est vous qui choisissez où elle va : la fenêtre d'enregistrement du téléphone, ou la feuille de partage (WhatsApp, messagerie, Drive...). Medipop ne l'envoie à personne d'elle-même. Le fichier est chiffré : celui qui le reçoit ne l'ouvre qu'avec Medipop et votre code de récupération ou le code famille. À partir de ce moment, le fichier est sous le contrôle du service que vous avez choisi (par exemple votre messagerie ou votre cloud) et de ses conditions ; celui qui gère le service peut voir que le fichier existe, sa taille et à qui vous l'avez envoyé, mais pas son contenu. Les sauvegardes que vous créez restent là où vous les avez mises tant que vous ne les supprimez pas.</p>
   <p>Les fiches des certificats et des cartes voyagent dans les sauvegardes chiffrées <code>.medipop</code> comme les autres entrées. À partir de la version 1.1, une sauvegarde peut aussi contenir les photos des pages des certificats et des cartes : c'est vous qui choisissez, avec un interrupteur. Les photos sont chiffrées dans le fichier comme tout le reste. Celui qui n'a pas le code voit seulement qu'il s'agit d'une sauvegarde Medipop, quand elle a été faite et à peu près combien de photos elle contient : rien du contenu.</p>
+  <p>À partir de la version 1.2, les sauvegardes chiffrées contiennent aussi les ordonnances, avec leurs pages, et les boîtes de la pharmacie familiale, avec leur photo.</p>
   <p>Le code famille permet aux téléphones de deux parents de lire les sauvegardes l'un de l'autre. Qui a le code et une sauvegarde peut lire les données : ne le donnez qu'à des personnes de confiance.</p>
 
   <h3>Les cercles de partage (à partir de la version 1.1)</h3>
   <p>Un cercle sert à partager une partie seulement de la famille avec qui vous voulez : n'importe quelle combinaison de personnes et d'animaux, même un seul (par exemple un seul enfant, ou seulement le chien). Vous pouvez avoir plusieurs cercles, chacun avec son propre code et son propre choix de qui partager.</p>
   <ul>
     <li>Une sauvegarde faite pour un cercle ne contient que les personnes et les animaux que vous avez mis dans le cercle et ce qui les concerne.</li>
+    <li>Une boîte de la pharmacie familiale qui est à toute la famille n'est jamais dans une sauvegarde faite pour un cercle ; la boîte d'une personne ou d'un animal du cercle, si.</li>
     <li>Elle ne s'ouvre qu'avec le code du cercle, qui est différent du code famille.</li>
     <li>Celui qui a le code du cercle peut lire ces sauvegardes et peut ajouter ou modifier les entrées de ces personnes. Quand vous importez son fichier, vous voyez les modifications et c'est vous qui les confirmez.</li>
     <li>Ce que vous écrivez dans la fiche d'une personne partagée voyage avec elle, notes libres comprises.</li>
@@ -143,7 +154,7 @@
   <p>medipop.app est un site de pages statiques uniquement, hébergé par OVHcloud en France : pas de cookies, pas de statistiques, pas de scripts, pas de contenu d'autres sites. Comme tout serveur web, celui d'OVHcloud enregistre dans ses journaux techniques l'adresse IP et la page demandée, pour la sécurité et le fonctionnement du service, et les conserve selon ses propres règles. Le développeur n'utilise pas ces journaux à d'autres fins.</p>
 
   <h2>Sécurité</h2>
-  <p>Chiffrement AES-256 de la base de données et des fichiers de sauvegarde ; les pages des certificats et les photos des cartes sont chiffrées comme la base de données (AES-256-GCM, une clé par photo) ; clés dans le système de protection du téléphone ; verrouillage de l'app par empreinte ou code PIN ; aucune capture d'écran possible pendant que l'app est ouverte (sur Android) et aucun aperçu dans les apps récentes. Aucun système n'est parfait : si le téléphone est « rooté » ou débridé (jailbreak), ou si quelqu'un connaît votre code de récupération et a l'une de vos sauvegardes, il peut lire les données. Si vous perdez le code de récupération et aussi le téléphone, personne, pas même le développeur, ne peut vous rendre les données.</p>
+  <p>Chiffrement AES-256 de la base de données et des fichiers de sauvegarde ; les pages des certificats et des ordonnances et les photos des cartes et des boîtes sont chiffrées comme la base de données (AES-256-GCM, une clé par photo) ; clés dans le système de protection du téléphone ; verrouillage de l'app par empreinte ou code PIN ; aucune capture d'écran possible pendant que l'app est ouverte (sur Android) et aucun aperçu dans les apps récentes. Aucun système n'est parfait : si le téléphone est « rooté » ou débridé (jailbreak), ou si quelqu'un connaît votre code de récupération et a l'une de vos sauvegardes, il peut lire les données. Si vous perdez le code de récupération et aussi le téléphone, personne, pas même le développeur, ne peut vous rendre les données.</p>
 
   <h2>Sources de la liste des médicaments</h2>
   <p>La liste des noms de médicaments dans l'app est établie à partir de sources publiques (voir la <a href="index.html#sources">page d'accueil</a>). Elle fonctionne sans se connecter à aucun service.</p>

@@ -43,7 +43,7 @@
   <p>Medipop is developed by Vanni M., an individual developer. Contact for privacy and support: <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>The data you enter in the app</h2>
-  <p>Medipop stores what you type: people and pets, illnesses, visits, treatments, vaccinations, medicines bought, notes and, from version 1.1, medical certificates with the photos of their pages and cards with the photos of both sides. This is health data, so the app handles it with particular care:</p>
+  <p>Medipop stores what you type: people and pets, illnesses, visits, treatments, vaccinations, medicines bought, notes and, from version 1.1, medical certificates with the photos of their pages, cards with the photos of both sides and, from version 1.2, prescriptions with the photos of their pages and the packs in the medicine cabinet with their photo. This is health data, so the app handles it with particular care:</p>
   <ul>
     <li>it stays <strong>only on your phone</strong>, in an encrypted database (AES-256, SQLCipher);</li>
     <li>the app <strong>has no internet access</strong> (it does not have the permission to connect), no account and no server;</li>
@@ -81,15 +81,26 @@
   <h3>Pet microchips (from version 1.1)</h3>
   <p>To read a pet's microchip number you can take a photo of the pet passport or of the barcode label. The photo is used only to read the number and is not kept: only the number remains, and you check it.</p>
 
+  <h3>Prescriptions (from version 1.2)</h3>
+  <p>From version 1.2 you can keep prescriptions in Medipop: you take a photo of the pages or import a PDF. The same rules apply as for certificates: the pages are cleaned of hidden data and encrypted one by one; the text and the barcodes are read on the phone, without internet, and nothing is sent to anyone. Medipop suggests the date, the doctor, the prescription number, the validity and the medicines, and you confirm or correct them. When you share a prescription as a PDF, the PDF is outside Medipop and is not encrypted: whoever receives it can read it.</p>
+
+  <h3>Medicine cabinet (from version 1.2)</h3>
+  <p>For each pack, Medipop keeps: the medicine, whose it is, the expiry date, the lot, how much is left, where you keep it and, if you like, a photo, cleaned of hidden data and encrypted like the others. The small square code printed on the pack and the printed expiry date are read on the phone, without internet. Everything stays on the phone, in the encrypted database. Expiry notices are notifications of the phone with a generic text that does not name the medicine.</p>
+
+  <h3>Package leaflets and official sites (from version 1.2)</h3>
+  <p>Medipop contains no package leaflets, and the app itself has no network access. The "Package leaflet (official site)" button does not make the app connect: it asks the phone's browser to open the site of a public medicines agency (AIFA, Swissmedic, AEMPS, the French public medicines database or EMA), which is a third party. Before opening it, Medipop tells you so. That site receives what any site receives: the page asked for, which is the page of the medicine, and your IP address, and it handles them under its own rules. Medipop adds nothing about you or your family.</p>
+
   <h2>Backups</h2>
   <p>A backup is an encrypted <code>.medipop</code> file. You create it and you choose where it goes: the phone's save dialog, or the share sheet (WhatsApp, mail, Drive...). Medipop does not send it to anyone by itself. The file is encrypted: whoever receives it can open it only with Medipop and your recovery code or the family code. From then on the file is under the control of the service you chose (for example your mail or cloud) and its terms; the service can see that the file exists, its size and who you sent it to, but not its contents. Backups you create stay where you put them until you delete them.</p>
   <p>The certificate and card entries travel in the encrypted <code>.medipop</code> backups like the other entries. From version 1.1 a backup can also carry the photos of certificate pages and cards: you choose, with a switch. The photos are encrypted inside the file like everything else. Someone without the code sees only that it is a Medipop backup, when it was made and roughly how many photos it holds: nothing of the contents.</p>
+  <p>From version 1.2 the encrypted backups also carry prescriptions, with their pages, and the packs of the medicine cabinet, with their photo.</p>
   <p>The family code lets two parents' phones read each other's backups. Anyone who has the code and a backup can read the data: give it only to people you trust.</p>
 
   <h3>Sharing circles (from version 1.1)</h3>
   <p>A circle lets you share only part of the family with whoever you choose: any combination of people and pets, even a single one (for example just one child, or just the dog). You can have several circles, each with its own code and its own choice of whom to share.</p>
   <ul>
     <li>A backup made for a circle holds only the people and pets you put in that circle and what belongs to them.</li>
+    <li>A pack in the medicine cabinet that belongs to the whole family is never in a backup made for a circle; the pack of a person or pet in the circle is.</li>
     <li>It opens only with the circle's code, which is different from the family code.</li>
     <li>Whoever has the circle's code can read those backups and can add or change the entries of those people. When you import their file, you see the changes and you confirm them.</li>
     <li>What you write in the record of a shared person travels with it, free-text notes included.</li>
@@ -143,7 +154,7 @@
   <p>medipop.app is a website of static pages only, hosted by OVHcloud in France: no cookies, no analytics, no scripts, no content from other sites. Like every web server, OVHcloud's records the IP address and the requested page in its technical logs, for security and to run the service, and keeps them under its own rules. The developer does not use these logs for anything else.</p>
 
   <h2>Security</h2>
-  <p>AES-256 encryption of the database and of backup files; the pages of certificates and the photos of cards are encrypted like the database (AES-256-GCM, one key per photo); keys in the phone's protection system; app lock with fingerprint or PIN; no screenshots while the app is open (on Android) and no preview in recent apps. No system is perfect: on a rooted or jailbroken phone, or if someone knows your recovery code and has one of your backups, the data can be read. If you lose the recovery code and the phone, nobody, not even the developer, can give your data back.</p>
+  <p>AES-256 encryption of the database and of backup files; the pages of certificates and prescriptions and the photos of cards and packs are encrypted like the database (AES-256-GCM, one key per photo); keys in the phone's protection system; app lock with fingerprint or PIN; no screenshots while the app is open (on Android) and no preview in recent apps. No system is perfect: on a rooted or jailbroken phone, or if someone knows your recovery code and has one of your backups, the data can be read. If you lose the recovery code and the phone, nobody, not even the developer, can give your data back.</p>
 
   <h2>Sources of the medicine list</h2>
   <p>The list of medicine names inside the app is built from public sources (see the <a href="index.html#sources">home page</a>). It works without connecting to any service.</p>

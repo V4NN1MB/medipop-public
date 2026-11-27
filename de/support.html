@@ -96,7 +96,7 @@
 
   <details>
     <summary>Erinnert mich Medipop an Medikamente? Kann sie Dosierungen berechnen?</summary>
-    <p>Erinnerungen ja: Sie wählen die Uhrzeit und für welche Familienmitglieder Sie die Benachrichtigung erhalten, die nie das Medikament zeigt: Höchstens steht der Vorname des Familienmitglieds darin, ohne Nachnamen, und Sie können ihn unter Mehr, Benachrichtigungen ausblenden. Dosierungen nein: Medipop bewahrt nur auf, was Sie schreiben, die Dosis ist der Text, den Sie von der Packung oder vom Rezept abschreiben, und die App berechnet oder prüft sie nicht. Andere Fotos oder Dokumente als die Seiten der ärztlichen Atteste und die Fotos der Karten (ab Version 1.1) lassen sich nicht speichern, und sie gibt keine medizinischen Ratschläge. Wenden Sie sich dafür an den Arzt, den Apotheker oder den Tierarzt.</p>
+    <p>Erinnerungen ja: Sie wählen die Uhrzeit und für welche Familienmitglieder Sie die Benachrichtigung erhalten, die nie das Medikament zeigt: Höchstens steht der Vorname des Familienmitglieds darin, ohne Nachnamen, und Sie können ihn unter Mehr, Benachrichtigungen ausblenden. Ab Version 1.2 weist ein Hinweis auch auf Packungen der Hausapotheke hin, die bald ablaufen, wieder ohne das Medikament zu nennen. Dosierungen nein: Medipop bewahrt nur auf, was Sie schreiben, die Dosis ist der Text, den Sie von der Packung oder vom Rezept abschreiben, und die App berechnet oder prüft sie nicht. Andere Fotos oder Dokumente als die Seiten der ärztlichen Atteste und die Fotos der Karten (ab Version 1.1), die Seiten der Rezepte und die Fotos der Packungen (ab Version 1.2) lassen sich nicht speichern, und sie gibt keine medizinischen Ratschläge. Sie prüft keine Wechselwirkungen und sagt nicht, wofür ein Medikament gut ist. Wenden Sie sich dafür an den Arzt, den Apotheker oder den Tierarzt.</p>
   </details>
 
   <details>
@@ -148,6 +148,37 @@
   <details>
     <summary>Wie lese ich den Mikrochip meines Tieres?</summary>
     <p>Ab Version 1.1. Öffnen Sie das Profil des Tieres und bearbeiten Sie es. Tippen Sie neben der Mikrochipnummer auf die Schaltfläche, um sie mit der Kamera zu lesen, und fotografieren Sie das Etikett im Heimtierausweis. Prüfen Sie dann die gelesene Nummer. Das Foto dient nur zum Lesen der Nummer und wird nicht aufbewahrt.</p>
+  </details>
+
+  <details>
+    <summary>Wie füge ich ein Rezept hinzu?</summary>
+    <p>Ab Version 1.2. Gehen Sie zu «Zum Tagebuch hinzufügen», «Rezept» und fügen Sie die Seiten hinzu, indem Sie sie fotografieren oder ein PDF importieren.</p>
+    <ul>
+      <li>Medipop liest den Text und die Strichcodes auf dem Telefon, ohne Internet, und schlägt Datum, Arzt, Rezeptnummer, Gültigkeit und die erkannten Medikamente vor. Es wird nichts hinzugefügt, bevor Sie bestätigen.</li>
+      <li>Um den Strichcode wieder gross auf dem Bildschirm zu sehen, tippen Sie auf «Code zeigen».</li>
+      <li>Bei einem verschriebenen Medikament öffnet «Behandlung anlegen» eine Behandlung, die schon mit diesem Medikament ausgefüllt ist. Dosis und Uhrzeiten tragen Sie selbst ein: Medipop berechnet sie nicht.</li>
+      <li>Sie können das Rezept als PDF teilen. Das geteilte PDF ist nicht verschlüsselt: Wer es erhält, kann es lesen.</li>
+      <li>Die Rezepte sind mit ihren Seiten wie alles andere in den verschlüsselten Sicherungen.</li>
+    </ul>
+    <p>Es ist eine persönliche Kopie: Ob eine Apotheke eine Kopie annimmt, hängt vom Land und von der Art des Rezepts ab. Bewahren Sie das Original auf.</p>
+  </details>
+
+  <details>
+    <summary>Wie benutze ich die Hausapotheke?</summary>
+    <p>Ab Version 1.2. Gehen Sie zu Mehr, «Hausapotheke» und fügen Sie eine Packung hinzu. Sie können die Angaben eintippen oder von einem Foto ausgehen: Medipop liest auf dem Telefon, ohne Internet, den kleinen quadratischen Code auf der Packung (er enthält Produkt, Verfallsdatum und Charge) und, in Italien, auch den Strichcode des Aufklebers der Apotheke; findet es keinen von beiden, versucht es das aufgedruckte Verfallsdatum. Prüfen Sie immer, was gelesen wurde, bevor Sie speichern.</p>
+    <ul>
+      <li>Zu jeder Packung: das Medikament, wem sie gehört (der ganzen Familie, einer Person oder einem Tier), das Verfallsdatum, die Charge, wie viel noch übrig ist, wo Sie sie aufbewahren und, wenn Sie möchten, ein Foto.</li>
+      <li>Die Liste zeigt zuerst die abgelaufenen Packungen, dann die, die innerhalb von 30 Tagen ablaufen. Sie erscheinen auch im Tab «Heute», im Bereich der bald ablaufenden Packungen.</li>
+      <li>Sie erhalten einen Hinweis 30 Tage vor dem Verfall und einen am Tag selbst, mit einem allgemeinen Text, der das Medikament nie nennt. Für jede Packung lässt er sich ausschalten.</li>
+      <li>Bei einer Packung tippen Sie auf «Behandlung beginnen».</li>
+      <li>Die Packungen sind mit ihrem Foto in den verschlüsselten Sicherungen. Eine Packung, die der ganzen Familie gehört, ist nie in einer für einen Kreis erstellten Sicherung; die Packung einer Person oder eines Tieres des Kreises schon.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>Wie lese ich die Packungsbeilage?</summary>
+    <p>Medipop enthält keine Packungsbeilagen und hat kein Internet. Bei einer Packung, deren Code zu Italien, der Schweiz, Spanien, Frankreich oder zu einem für die ganze EU zugelassenen Medikament gehört, öffnen Sie die Packung und tippen auf «Packungsbeilage (offizielle Website)»: Der Browser des Telefons öffnet die offizielle Website der Arzneimittelbehörde (AIFA, Swissmedic, AEMPS, die öffentliche französische Arzneimitteldatenbank, EMA). Bevor sie sich öffnet, weist Medipop Sie darauf hin, dass diese Website die verlangte Seite und Ihre IP-Adresse sieht, wie jede Website; Medipop sendet nichts weiter.</p>
+    <p>Bei deutschen und österreichischen Codes gibt es keine Schaltfläche, weil man von diesem Code aus zu keiner offiziellen Website gelangt. Medipop erklärt nicht, wofür ein Medikament gut ist: Fragen Sie den Arzt oder den Apotheker.</p>
   </details>
 
   <h2>Weitere Hilfe</h2>

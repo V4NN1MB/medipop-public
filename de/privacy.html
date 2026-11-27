@@ -43,7 +43,7 @@
   <p>Medipop wird von Vanni M. entwickelt, einem einzelnen Entwickler. Kontakt für Datenschutz und Support: <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>Die Daten, die Sie in der App eingeben</h2>
-  <p>Medipop bewahrt auf, was Sie schreiben: Personen und Tiere, Krankheiten, Arztbesuche, Behandlungen, Impfungen, gekaufte Medikamente, Notizen und, ab Version 1.1, ärztliche Atteste mit den Fotos ihrer Seiten. Das sind Gesundheitsdaten, und deshalb behandelt die App sie mit besonderer Sorgfalt:</p>
+  <p>Medipop bewahrt auf, was Sie schreiben: Personen und Tiere, Krankheiten, Arztbesuche, Behandlungen, Impfungen, gekaufte Medikamente, Notizen und, ab Version 1.1, ärztliche Atteste mit den Fotos ihrer Seiten sowie Karten mit den Fotos beider Seiten. Das sind Gesundheitsdaten, und deshalb behandelt die App sie mit besonderer Sorgfalt:</p>
   <ul>
     <li>Sie bleiben <strong>nur auf Ihrem Telefon</strong>, in einer verschlüsselten Datenbank (AES-256, SQLCipher);</li>
     <li>die App hat <strong>keinen Internetzugriff</strong> (sie hat nicht die Berechtigung, sich zu verbinden) und hat weder ein Konto noch einen Server;</li>
@@ -51,6 +51,9 @@
     <li>der Schlüssel, der sie öffnet, wird vom System des Telefons (Android Keystore, iOS-Schlüsselbund) und von einem Wiederherstellungscode verwahrt, den nur Sie kennen. Der Entwickler hat weder den Schlüssel noch den Code.</li>
   </ul>
   <p>Da Sie diese Daten ausschliesslich zu persönlichen oder familiären Zwecken verarbeiten (die Akte Ihrer Familie), verarbeitet sie nicht der Entwickler: Das Datenschutzrecht findet auf diese Nutzung keine Anwendung (Artikel 2 Absatz 2 Buchstabe c der Verordnung (EU) 2016/679, DSGVO; Artikel 2 Absatz 2 Buchstabe a des schweizerischen Bundesgesetzes über den Datenschutz, nDSG). Der Entwickler <strong>verarbeitet keine personenbezogenen Daten der Nutzer der App</strong>, ausser den unten beschriebenen E-Mails.</p>
+
+  <h3>Für wen</h3>
+  <p>Medipop ist für Ihren eigenen Haushalt gedacht: die Menschen und Tiere, mit denen Sie zusammenleben. Die Gesundheitsdokumente der eigenen Familie auf dem eigenen Telefon aufzubewahren, ist eine persönliche Nutzung. Verwenden Sie Medipop nicht für die Dokumente von Angestellten, von Sportlerinnen und Sportlern eines Vereins oder von Patienten. Bei einer anderen erwachsenen Person der Familie sprechen Sie sich vorher mit ihr ab.</p>
 
   <h3>Kinder</h3>
   <p>Medipop ist für Erwachsene gedacht. Eltern können die Gesundheitsdaten ihrer Kinder in ihrer eigenen Familienakte erfassen, wie in einem privaten Heft: Die App richtet sich nicht an Minderjährige, fragt nicht nach deren Alter und legt für sie keine Konten an.</p>
@@ -63,11 +66,35 @@
     <li>Lesen des Textes: Medipop liest den Text der Seiten auf dem Telefon, ohne Internet: auf dem iPhone mit dem Vision-Framework von Apple, auf Android mit der Texterkennung ML Kit von Google, deren Modell in der App enthalten ist. Es wird nichts an Apple, an Google oder an den Entwickler gesendet (die App hat keine Berechtigung für den Internetzugriff). Aus dem Text schlägt Medipop die Art, das Ausstellungsdatum, die Gültigkeit, die Daten und Tage der Abwesenheit und den Arzt vor; Sie bestätigen oder korrigieren jeden Wert. Der erkannte Text wird in der verschlüsselten Datenbank gespeichert und kann im Tagebuch gesucht werden.</li>
     <li>«Als PDF teilen» erstellt ein PDF mit den Seiten und öffnet das Teilen-Menü des Telefons. Nach dem Teilen liegt das PDF ausserhalb von Medipop und ist nicht verschlüsselt: Wer es erhält, kann es lesen. Das temporäre PDF wird danach vom Telefon gelöscht.</li>
   </ul>
+  <p>Ein praktischer Hinweis: Bei einem Arbeitsunfähigkeitszeugnis braucht der Arbeitgeber nur die Fassung ohne Diagnose (in Italien das <span lang="it">«attestato»</span> oder die Protokollnummer). Wenn Sie das PDF teilen, prüfen Sie, welche der beiden Sie senden. Und bewahren Sie das Original auf: Ein Foto ist eine Kopie.</p>
+
+  <h3>Karten (ab Version 1.1)</h3>
+  <p>Ab Version 1.1 können Sie Karten in Medipop aufbewahren: Krankenkassenkarte, Versicherungen, Kundenkarten der Apotheke und andere. Wenn Sie eine Karte hinzufügen, bewahrt Medipop Folgendes auf:</p>
+  <ul>
+    <li>die Fotos beider Seiten, von versteckten Daten (Standort, Kameradaten) befreit und wie die Seiten der Atteste einzeln verschlüsselt;</li>
+    <li>den aus den Fotos gelesenen Text;</li>
+    <li>die Angaben der Karte: Inhaber, Nummer, persönliche Nummer (zum Beispiel die AHV-Nummer), Aussteller, Ablaufdatum;</li>
+    <li>den Inhalt des Strichcodes.</li>
+  </ul>
+  <p>Alles bleibt auf dem Telefon, in der verschlüsselten Datenbank. Text und Strichcode werden auf dem Telefon gelesen, ohne Internet: Es wird nichts an irgendjemanden gesendet.</p>
+
+  <h3>Mikrochip der Tiere (ab Version 1.1)</h3>
+  <p>Um die Mikrochipnummer eines Tieres zu lesen, können Sie den Heimtierausweis oder das Etikett mit dem Strichcode fotografieren. Das Foto dient nur zum Lesen der Nummer und wird nicht aufbewahrt: Es bleibt nur die Nummer, die Sie selbst prüfen.</p>
 
   <h2>Die Sicherungen</h2>
   <p>Eine Sicherung ist eine verschlüsselte Datei <code>.medipop</code>. Sie erstellen sie, und Sie bestimmen, wohin sie geht: das Speicherfenster des Telefons oder das Teilen-Menü (WhatsApp, E-Mail, Drive...). Medipop sendet sie nicht von selbst an jemanden. Die Datei ist verschlüsselt: Wer sie erhält, öffnet sie nur mit Medipop und Ihrem Wiederherstellungscode oder dem Familiencode. Ab diesem Moment steht die Datei unter der Kontrolle des von Ihnen gewählten Dienstes (zum Beispiel Ihres E-Mail-Anbieters oder Ihrer Cloud) und seiner Bedingungen; wer den Dienst betreibt, kann sehen, dass die Datei existiert, wie gross sie ist und an wen Sie sie gesendet haben, aber nicht den Inhalt. Die Sicherungen, die Sie erstellen, bleiben dort, wo Sie sie abgelegt haben, bis Sie sie löschen.</p>
-  <p>Die Einträge der Atteste reisen wie die anderen Einträge in den verschlüsselten Sicherungen <code>.medipop</code>, aber die Fotos der Seiten sind vorerst nicht in den Sicherungen: Sie bleiben nur auf dem Telefon, auf dem Sie sie hinzugefügt haben.</p>
+  <p>Die Einträge der Atteste und der Karten reisen wie die anderen Einträge in den verschlüsselten Sicherungen <code>.medipop</code>. Ab Version 1.1 kann eine Sicherung auch die Fotos der Seiten der Atteste und der Karten enthalten: Das wählen Sie selbst, mit einem Schalter. Die Fotos sind in der Datei verschlüsselt wie alles andere. Wer den Code nicht hat, sieht nur, dass es eine Sicherung von Medipop ist, wann sie erstellt wurde und ungefähr wie viele Fotos sie enthält: nichts vom Inhalt.</p>
   <p>Der Familiencode ermöglicht es den Telefonen zweier Elternteile, die Sicherungen des jeweils anderen zu lesen. Wer den Code und eine Sicherung hat, kann die Daten lesen: Geben Sie ihn nur vertrauenswürdigen Personen.</p>
+
+  <h3>Kreise (ab Version 1.1)</h3>
+  <p>Mit einem Kreis teilen Sie nur einen Teil der Familie, mit wem Sie möchten: jede beliebige Kombination von Menschen und Tieren, auch nur eine einzige (zum Beispiel nur ein Kind oder nur der Hund). Sie können mehrere Kreise haben, jeden mit seinem eigenen Code und seiner eigenen Auswahl, wer geteilt wird.</p>
+  <ul>
+    <li>Eine für einen Kreis erstellte Sicherung enthält nur die Menschen und Tiere, die Sie in den Kreis aufgenommen haben, und was zu ihnen gehört.</li>
+    <li>Sie lässt sich nur mit dem Code des Kreises öffnen, der sich vom Familiencode unterscheidet.</li>
+    <li>Wer den Code des Kreises hat, kann diese Sicherungen lesen und die Einträge dieser Personen ergänzen oder ändern. Wenn Sie seine Datei importieren, sehen Sie die Änderungen und bestätigen sie selbst.</li>
+    <li>Was Sie in die Akte einer geteilten Person schreiben, reist mit ihr, auch freie Notizen.</li>
+    <li>Wenn Sie einen Kreis verlassen, vergisst dieses Telefon den Code. Bereits gesendete Dateien bleiben für alle lesbar, die den Code haben.</li>
+  </ul>
 
   <h2>Daten löschen</h2>
   <ul>
@@ -116,7 +143,7 @@
   <p>medipop.app ist eine Website mit ausschliesslich statischen Seiten, gehostet von OVHcloud in Frankreich: keine Cookies, keine Statistiken, keine Skripte, keine Inhalte anderer Websites. Wie jeder Webserver erfasst der von OVHcloud in seinen technischen Protokollen die IP-Adresse und die angeforderte Seite, für die Sicherheit und den Betrieb des Dienstes, und bewahrt sie nach seinen eigenen Regeln auf. Der Entwickler verwendet diese Protokolle für nichts anderes.</p>
 
   <h2>Sicherheit</h2>
-  <p>AES-256-Verschlüsselung der Datenbank und der Sicherungsdateien; die Seiten der Atteste sind wie die Datenbank verschlüsselt (AES-256-GCM, ein Schlüssel pro Seite); Schlüssel im Schutzsystem des Telefons; Sperre der App mit Fingerabdruck oder PIN; keine Bildschirmaufnahme möglich, solange die App geöffnet ist (auf Android), und keine Vorschau in den zuletzt verwendeten Apps. Kein System ist perfekt: Wenn das Telefon «gerootet» ist oder einen Jailbreak hat, oder wenn jemand Ihren Wiederherstellungscode kennt und eine Sicherung von Ihnen hat, kann er die Daten lesen. Wenn Sie den Wiederherstellungscode und auch das Telefon verlieren, kann Ihnen niemand, auch nicht der Entwickler, die Daten zurückgeben.</p>
+  <p>AES-256-Verschlüsselung der Datenbank und der Sicherungsdateien; die Seiten der Atteste und die Fotos der Karten sind wie die Datenbank verschlüsselt (AES-256-GCM, ein Schlüssel pro Foto); Schlüssel im Schutzsystem des Telefons; Sperre der App mit Fingerabdruck oder PIN; keine Bildschirmaufnahme möglich, solange die App geöffnet ist (auf Android), und keine Vorschau in den zuletzt verwendeten Apps. Kein System ist perfekt: Wenn das Telefon «gerootet» ist oder einen Jailbreak hat, oder wenn jemand Ihren Wiederherstellungscode kennt und eine Sicherung von Ihnen hat, kann er die Daten lesen. Wenn Sie den Wiederherstellungscode und auch das Telefon verlieren, kann Ihnen niemand, auch nicht der Entwickler, die Daten zurückgeben.</p>
 
   <h2>Quellen der Medikamentenliste</h2>
   <p>Die Liste der Medikamentennamen in der App wurde aus öffentlichen Quellen erstellt (siehe die <a href="index.html#quellen">Startseite</a>). Sie funktioniert, ohne sich mit einem Dienst zu verbinden.</p>

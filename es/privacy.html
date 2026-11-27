@@ -43,7 +43,7 @@
   <p>Medipop está desarrollada por Vanni M., desarrollador individual. Contacto para la privacidad y la asistencia: <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>Los datos que introduces en la app</h2>
-  <p>Medipop guarda lo que escribes: personas y animales, enfermedades, visitas, tratamientos, vacunas, medicamentos comprados, notas y, desde la versión 1.1, certificados médicos con las fotos de sus páginas. Son datos de salud, y por eso la app los trata con especial cuidado:</p>
+  <p>Medipop guarda lo que escribes: personas y animales, enfermedades, visitas, tratamientos, vacunas, medicamentos comprados, notas y, desde la versión 1.1, certificados médicos con las fotos de sus páginas y tarjetas con las fotos de sus dos caras. Son datos de salud, y por eso la app los trata con especial cuidado:</p>
   <ul>
     <li>se quedan <strong>solo en tu teléfono</strong>, en una base de datos cifrada (AES-256, SQLCipher);</li>
     <li>la app <strong>no tiene acceso a internet</strong> (no tiene el permiso para conectarse) y no tiene ni cuenta ni servidor;</li>
@@ -51,6 +51,9 @@
     <li>la clave que los abre está custodiada por el sistema del teléfono (Android Keystore, Llavero de iOS) y por un código de recuperación que solo tú conoces. El desarrollador no tiene ni la clave ni el código.</li>
   </ul>
   <p>Como estos datos los tratas tú, con fines exclusivamente personales o domésticos (la carpeta de tu familia), no es el desarrollador quien los trata: la normativa de protección de datos no se aplica a este uso (artículo 2, apartado 2, letra c, del Reglamento UE 2016/679, RGPD; artículo 2, apartado 2, letra a, de la Ley federal suiza de protección de datos, nLPD). El desarrollador <strong>no trata datos personales de los usuarios de la app</strong>, salvo los correos descritos más abajo.</p>
+
+  <h3>Para quién es</h3>
+  <p>Medipop está hecha para tu propia casa: las personas y los animales con los que vives. Guardar en tu teléfono los documentos de salud de tu familia es un uso personal. No uses Medipop para los documentos de empleados, de los deportistas de un club o de pacientes. Para otro adulto de la familia, ponte antes de acuerdo con él.</p>
 
   <h3>Menores</h3>
   <p>Medipop está pensada para adultos. Los padres pueden introducir los datos de salud de sus hijos dentro de su propia carpeta de familia, como en un cuaderno privado: la app no se dirige a menores, no pregunta su edad y no crea cuentas para ellos.</p>
@@ -63,11 +66,35 @@
     <li>Lectura del texto: Medipop lee el texto de las páginas en el teléfono, sin internet: en iPhone con el framework Vision de Apple, en Android con el reconocimiento de texto ML Kit de Google, cuyo modelo está dentro de la app. No se envía nada a Apple, a Google ni al desarrollador (la app no tiene permiso para acceder a internet). A partir del texto, Medipop propone el tipo, la fecha de emisión, la validez, las fechas y los días de ausencia y el médico; tú confirmas o corriges cada valor. El texto reconocido se guarda en la base de datos cifrada y se puede buscar en el diario.</li>
     <li>«Compartir como PDF» crea un PDF con las páginas y abre la hoja de compartir del teléfono. Una vez compartido, el PDF está fuera de Medipop y no está cifrado: quien lo recibe puede leerlo. El PDF temporal se borra después del teléfono.</li>
   </ul>
+  <p>Un consejo práctico: para un certificado de baja por enfermedad, a la empresa le basta la versión sin el diagnóstico (en Italia, el <span lang="it">«attestato»</span> o el número de protocolo). Cuando compartas el PDF, comprueba cuál de los dos estás enviando. Y conserva el original: una foto es una copia.</p>
+
+  <h3>Tarjetas (desde la versión 1.1)</h3>
+  <p>Desde la versión 1.1 puedes guardar tarjetas en Medipop: tarjeta sanitaria, seguros, tarjetas de la farmacia y otras. Cuando añades una tarjeta, Medipop guarda:</p>
+  <ul>
+    <li>las fotos de las dos caras, limpias de los datos ocultos (ubicación, datos de la cámara) y cifradas como las páginas de los certificados, una a una;</li>
+    <li>el texto leído de las fotos;</li>
+    <li>los datos de la tarjeta: titular, número, número de identificación personal, entidad que la emite, fecha de caducidad;</li>
+    <li>el contenido del código de barras.</li>
+  </ul>
+  <p>Todo se queda en el teléfono, en la base de datos cifrada. El texto y el código de barras se leen en el teléfono, sin internet: no se envía nada a nadie.</p>
+
+  <h3>Microchip de los animales (desde la versión 1.1)</h3>
+  <p>Para leer el número de microchip de un animal puedes fotografiar su pasaporte o la etiqueta con el código de barras. La foto solo sirve para leer el número y no se guarda: queda solo el número, que compruebas tú.</p>
 
   <h2>Las copias de seguridad</h2>
   <p>Una copia es un archivo cifrado <code>.medipop</code>. La creas tú y eliges tú adónde va: la ventana de guardado del teléfono o la hoja de compartir (WhatsApp, correo, Drive...). Medipop no la envía por sí sola a nadie. El archivo está cifrado: quien lo recibe solo lo abre con Medipop y con tu código de recuperación o el código de familia. A partir de ese momento, el archivo queda bajo el control del servicio que has elegido (por ejemplo tu correo o tu nube) y de sus condiciones; quien gestiona el servicio puede ver que el archivo existe, su tamaño y a quién se lo has enviado, pero no el contenido. Las copias que creas se quedan donde las has puesto hasta que las borres tú.</p>
-  <p>Las fichas de los certificados viajan en las copias cifradas <code>.medipop</code> como las demás entradas, pero por ahora las fotos de las páginas no están en las copias: se quedan solo en el teléfono donde las has añadido.</p>
+  <p>Las fichas de los certificados y de las tarjetas viajan en las copias cifradas <code>.medipop</code> como las demás entradas. Desde la versión 1.1 una copia puede llevar también las fotos de las páginas de los certificados y de las tarjetas: lo eliges tú, con un interruptor. Las fotos van cifradas dentro del archivo como todo lo demás. Quien no tiene el código solo ve que es una copia de Medipop, cuándo se hizo y, más o menos, cuántas fotos contiene: nada del contenido.</p>
   <p>El código de familia permite que los teléfonos de dos progenitores lean las copias del otro. Quien tiene el código y una copia puede leer los datos: dáselo solo a personas de confianza.</p>
+
+  <h3>Los círculos (desde la versión 1.1)</h3>
+  <p>Un círculo sirve para compartir solo una parte de la familia con quien tú quieras: cualquier combinación de personas y animales, incluso uno solo (por ejemplo solo un hijo, o solo el perro). Puedes tener varios círculos, cada uno con su propio código y su propia elección de a quién compartir.</p>
+  <ul>
+    <li>Una copia hecha para un círculo contiene solo las personas y los animales que has puesto en el círculo y lo que les corresponde.</li>
+    <li>Solo se abre con el código del círculo, que es distinto del código de familia.</li>
+    <li>Quien tiene el código del círculo puede leer esas copias y puede añadir o modificar las entradas de esas personas. Cuando importas su archivo, ves los cambios y los confirmas tú.</li>
+    <li>Lo que escribes en la ficha de una persona compartida viaja con ella, incluidas las notas libres.</li>
+    <li>Si sales de un círculo, este teléfono olvida el código. Los archivos ya enviados siguen siendo legibles por quien tiene el código.</li>
+  </ul>
 
   <h2>Borrar los datos</h2>
   <ul>
@@ -116,7 +143,7 @@
   <p>medipop.app es un sitio de páginas estáticas únicamente, alojado por OVHcloud en Francia: sin cookies, sin estadísticas, sin scripts, sin contenidos de otros sitios. Como cualquier servidor web, el de OVHcloud registra en sus registros técnicos la dirección IP y la página solicitada, por seguridad y para el funcionamiento del servicio, y los conserva según sus propias normas. El desarrollador no usa estos registros para nada más.</p>
 
   <h2>Seguridad</h2>
-  <p>Cifrado AES-256 de la base de datos y de los archivos de copia; las páginas de los certificados están cifradas como la base de datos (AES-256-GCM, una clave por página); claves en el sistema de protección del teléfono; bloqueo de la app con huella o PIN; ninguna captura de pantalla posible mientras la app está abierta (en Android) y ninguna vista previa en las apps recientes. Ningún sistema es perfecto: si el teléfono tiene «root» o jailbreak, o si alguien conoce tu código de recuperación y tiene una copia tuya, puede leer los datos. Si pierdes el código de recuperación y también el teléfono, nadie, ni siquiera el desarrollador, puede devolverte los datos.</p>
+  <p>Cifrado AES-256 de la base de datos y de los archivos de copia; las páginas de los certificados y las fotos de las tarjetas están cifradas como la base de datos (AES-256-GCM, una clave por foto); claves en el sistema de protección del teléfono; bloqueo de la app con huella o PIN; ninguna captura de pantalla posible mientras la app está abierta (en Android) y ninguna vista previa en las apps recientes. Ningún sistema es perfecto: si el teléfono tiene «root» o jailbreak, o si alguien conoce tu código de recuperación y tiene una copia tuya, puede leer los datos. Si pierdes el código de recuperación y también el teléfono, nadie, ni siquiera el desarrollador, puede devolverte los datos.</p>
 
   <h2>Fuentes de la lista de medicamentos</h2>
   <p>La lista de nombres de medicamentos dentro de la app está elaborada a partir de fuentes públicas (véase la <a href="index.html#fuentes">página de inicio</a>). Funciona sin conectarse a ningún servicio.</p>

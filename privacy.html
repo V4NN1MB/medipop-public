@@ -35,7 +35,7 @@
 <div class="wrap narrow doc">
 <div class="sheet">
   <h1>Informativa sulla privacy</h1>
-  <p class="muted">Ultimo aggiornamento: 24 novembre 2026.</p>
+  <p class="muted">Ultimo aggiornamento: 27 novembre 2026.</p>
 
   <p class="lead">In breve: i dati che scrivi in Medipop restano sul tuo telefono, cifrati. Lo sviluppatore non li riceve, non può leggerli e non ha nessun server dove conservarli. L'unica cosa che può arrivare a lui è un'e-mail che decidi tu di scrivergli.</p>
 
@@ -43,7 +43,7 @@
   <p>Medipop è sviluppata da Vanni M., sviluppatore individuale. Contatto per la privacy e l'assistenza: <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>I dati che inserisci nell'app</h2>
-  <p>Medipop conserva quello che scrivi: persone e animali, malattie, visite, trattamenti, vaccinazioni, farmaci acquistati, note. Sono dati sulla salute, e per questo l'app li tratta con particolare cura:</p>
+  <p>Medipop conserva quello che scrivi: persone e animali, malattie, visite, trattamenti, vaccinazioni, farmaci acquistati, note e, dalla versione 1.1, i certificati medici con le foto delle loro pagine. Sono dati sulla salute, e per questo l'app li tratta con particolare cura:</p>
   <ul>
     <li>restano <strong>solo sul tuo telefono</strong>, in un database cifrato (AES-256, SQLCipher);</li>
     <li>l'app <strong>non ha accesso a internet</strong> (non ha il permesso di collegarsi) e non ha un account, né un server;</li>
@@ -55,8 +55,18 @@
   <h3>Bambini</h3>
   <p>Medipop è pensata per gli adulti. I genitori possono inserire i dati sanitari dei propri figli dentro la propria cartella di famiglia, come in un quaderno privato: l'app non è rivolta ai minori, non chiede la loro età e non crea account per loro.</p>
 
+  <h3>Foto dei certificati e lettura del testo (dalla versione 1.1)</h3>
+  <p>Dalla versione 1.1 puoi tenere in Medipop i certificati medici e aggiungere a ognuno le pagine: le fotografi, scegli una foto dalla galleria o importi un PDF.</p>
+  <ul>
+    <li>Fotocamera: su Android la foto la scatta l'app fotocamera del telefono e Medipop non chiede nessun permesso per la fotocamera; su iPhone Medipop chiede il permesso per la fotocamera la prima volta che fotografi.</li>
+    <li>Conservazione: ogni pagina è salvata come immagine ricodificata, senza dati di posizione né della fotocamera (EXIF), e cifrata sul telefono (AES-256-GCM, una chiave per ogni pagina), nella stessa cartella protetta del database. I file temporanei vengono cancellati subito.</li>
+    <li>Lettura del testo: Medipop legge il testo delle pagine sul telefono, senza internet: su iPhone con il framework Vision di Apple, su Android con il riconoscimento del testo ML Kit di Google, il cui modello è dentro l'app. Niente viene inviato ad Apple, a Google o allo sviluppatore (l'app non ha il permesso di accedere a internet). Dal testo Medipop propone il tipo, la data di rilascio, la validità, le date e i giorni di assenza e il medico; confermi o correggi tu ogni valore. Il testo riconosciuto è conservato nel database cifrato e si può cercare nel diario.</li>
+    <li>«Condividi come PDF» crea un PDF con le pagine e apre il foglio di condivisione del telefono. Una volta condiviso, il PDF è fuori da Medipop e non è cifrato: chi lo riceve può leggerlo. Il PDF temporaneo viene poi cancellato dal telefono.</li>
+  </ul>
+
   <h2>Le copie di sicurezza</h2>
   <p>Una copia è un file cifrato <code>.medipop</code>. Lo crei tu, e scegli tu dove va: la finestra di salvataggio del telefono, oppure il foglio di condivisione (WhatsApp, posta, Drive...). Medipop non lo invia da sola a nessuno. Il file è cifrato: chi lo riceve lo apre solo con Medipop e con il tuo codice di recupero o il codice famiglia. Da quel momento il file è sotto il controllo del servizio che hai scelto (per esempio la tua posta o il tuo cloud) e dei suoi termini; chi gestisce il servizio può vedere che il file esiste, la sua dimensione e a chi lo hai mandato, ma non il contenuto. Le copie che crei restano dove le hai messe finché non le cancelli tu.</p>
+  <p>Le schede dei certificati viaggiano nelle copie cifrate <code>.medipop</code> come le altre voci, ma per ora le foto delle pagine non sono nelle copie: restano solo sul telefono dove le hai aggiunte.</p>
   <p>Il codice famiglia permette ai telefoni di due genitori di leggere le copie l'uno dell'altro. Chi ha il codice e una copia può leggere i dati: daglielo solo a persone di fiducia.</p>
 
   <h2>Cancellare i dati</h2>
@@ -100,13 +110,13 @@
   <p>Per le e-mail che ci hai inviato puoi chiedere l'accesso, la rettifica, la cancellazione, la limitazione, l'opposizione e, dove applicabile, la portabilità dei dati: basta scrivere a medipop.app@gmail.com. Risponderemo entro un mese. Hai anche il diritto di rivolgerti all'autorità di controllo: in Italia il Garante per la protezione dei dati personali (garanteprivacy.it); in Svizzera l'Incaricato federale della protezione dei dati e della trasparenza (IFPDT, edoeb.admin.ch).</p>
 
   <h2>Apple e Google</h2>
-  <p>Quando scarichi l'app, Apple (App Store) o Google (Google Play) trattano i dati del tuo download e del tuo account secondo le loro informative. Lo sviluppatore riceve da loro, al massimo, statistiche aggregate e anonime (numero di installazioni, versioni, paesi). Medipop non invia loro dati e non li riceve dall'app.</p>
+  <p>Quando scarichi l'app, Apple (App Store) o Google (Google Play) trattano i dati del tuo download e del tuo account secondo le loro informative. Lo sviluppatore riceve da loro, al massimo, statistiche aggregate e anonime (numero di installazioni, versioni, paesi). Medipop non invia loro dati e non li riceve dall'app. Le librerie di riconoscimento del testo di Apple (Vision) e di Google (ML Kit) lavorano sul telefono e Medipop non invia loro nulla.</p>
 
   <h2>Questo sito</h2>
   <p>medipop.app è un sito di sole pagine statiche, ospitato da OVHcloud in Francia: niente cookie, niente statistiche, niente script, niente contenuti di altri siti. Come ogni server web, quello di OVHcloud registra nei suoi log tecnici l'indirizzo IP e la pagina richiesta, per sicurezza e per il funzionamento del servizio, e li conserva secondo le sue regole. Lo sviluppatore non usa questi log per altro.</p>
 
   <h2>Sicurezza</h2>
-  <p>Cifratura AES-256 del database e dei file di copia; chiavi nel sistema di protezione del telefono; blocco dell'app con impronta o PIN; nessuna schermata catturabile mentre l'app è aperta (su Android) e nessuna anteprima nelle app recenti. Nessun sistema è perfetto: se il telefono è «rootato» o con jailbreak, o se qualcuno conosce il tuo codice di recupero e ha una tua copia, può leggere i dati. Se perdi il codice di recupero e anche il telefono, nessuno, nemmeno lo sviluppatore, può ridarti i dati.</p>
+  <p>Cifratura AES-256 del database e dei file di copia; le pagine dei certificati sono cifrate come il database (AES-256-GCM, una chiave per ogni pagina); chiavi nel sistema di protezione del telefono; blocco dell'app con impronta o PIN; nessuna schermata catturabile mentre l'app è aperta (su Android) e nessuna anteprima nelle app recenti. Nessun sistema è perfetto: se il telefono è «rootato» o con jailbreak, o se qualcuno conosce il tuo codice di recupero e ha una tua copia, può leggere i dati. Se perdi il codice di recupero e anche il telefono, nessuno, nemmeno lo sviluppatore, può ridarti i dati.</p>
 
   <h2>Fonti dell'elenco dei farmaci</h2>
   <p>L'elenco dei nomi dei farmaci dentro l'app è ricavato da fonti pubbliche (vedi la <a href="index.html#fonti">pagina iniziale</a>). Funziona senza collegarsi a nessun servizio.</p>

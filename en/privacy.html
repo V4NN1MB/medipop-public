@@ -35,7 +35,7 @@
 <div class="wrap narrow doc">
 <div class="sheet">
   <h1>Privacy policy</h1>
-  <p class="muted">Last updated: 24 November 2026. The Italian version is the original; this is a translation.</p>
+  <p class="muted">Last updated: 27 November 2026. The Italian version is the original; this is a translation.</p>
 
   <p class="lead">In short: the data you type into Medipop stays on your phone, encrypted. The developer does not receive it, cannot read it and has no server to keep it on. The only thing that can reach the developer is an e-mail that you decide to write.</p>
 
@@ -43,7 +43,7 @@
   <p>Medipop is developed by Vanni M., an individual developer. Contact for privacy and support: <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>The data you enter in the app</h2>
-  <p>Medipop stores what you type: people and pets, illnesses, visits, treatments, vaccinations, medicines bought, notes. This is health data, so the app handles it with particular care:</p>
+  <p>Medipop stores what you type: people and pets, illnesses, visits, treatments, vaccinations, medicines bought, notes and, from version 1.1, medical certificates with the photos of their pages. This is health data, so the app handles it with particular care:</p>
   <ul>
     <li>it stays <strong>only on your phone</strong>, in an encrypted database (AES-256, SQLCipher);</li>
     <li>the app <strong>has no internet access</strong> (it does not have the permission to connect), no account and no server;</li>
@@ -55,8 +55,18 @@
   <h3>Children</h3>
   <p>Medipop is meant for adults. Parents can enter their own children's health data in their own family records, as in a private notebook: the app is not aimed at minors, does not ask for their age and creates no accounts for them.</p>
 
+  <h3>Photos of certificates and text reading (from version 1.1)</h3>
+  <p>From version 1.1 you can keep medical certificates in Medipop and add pages to each one: you take a photo, choose a photo from the gallery or import a PDF.</p>
+  <ul>
+    <li>Camera: on Android the phone's own camera app takes the picture and Medipop asks for no camera permission; on iPhone Medipop asks for the camera permission the first time you take a photo.</li>
+    <li>Storage: each page is saved as an image re-encoded without location or camera data (EXIF) and encrypted on the phone (AES-256-GCM, one key per page), in the same protected folder as the database. Temporary files are deleted immediately.</li>
+    <li>Text reading: Medipop reads the text of the pages on the phone, without internet: on iPhone with Apple's Vision framework, on Android with Google's ML Kit text recognition, whose model is inside the app. Nothing is sent to Apple, to Google or to the developer (the app has no internet permission). From the text Medipop suggests the type, the issue date, the validity, the absence dates and days and the doctor; you confirm or correct each value. The recognised text is stored in the encrypted database and can be searched in the diary.</li>
+    <li>"Share as PDF" builds a PDF of the pages and opens the phone's share sheet. Once shared, the PDF is outside Medipop and is not encrypted: whoever receives it can read it. The temporary PDF is then deleted from the phone.</li>
+  </ul>
+
   <h2>Backups</h2>
   <p>A backup is an encrypted <code>.medipop</code> file. You create it and you choose where it goes: the phone's save dialog, or the share sheet (WhatsApp, mail, Drive...). Medipop does not send it to anyone by itself. The file is encrypted: whoever receives it can open it only with Medipop and your recovery code or the family code. From then on the file is under the control of the service you chose (for example your mail or cloud) and its terms; the service can see that the file exists, its size and who you sent it to, but not its contents. Backups you create stay where you put them until you delete them.</p>
+  <p>The certificate entries travel in the encrypted <code>.medipop</code> backups like the other entries, but for now the photos of the pages are not in the backups: they stay only on the phone where you added them.</p>
   <p>The family code lets two parents' phones read each other's backups. Anyone who has the code and a backup can read the data: give it only to people you trust.</p>
 
   <h2>Deleting data</h2>
@@ -100,13 +110,13 @@
   <p>For the e-mails you sent us you can ask for access, rectification, erasure, restriction, objection and, where applicable, portability: write to medipop.app@gmail.com. We will reply within one month. You also have the right to complain to a supervisory authority: in Italy the Garante per la protezione dei dati personali (garanteprivacy.it); in Switzerland the Federal Data Protection and Information Commissioner (FDPIC, edoeb.admin.ch).</p>
 
   <h2>Apple and Google</h2>
-  <p>When you download the app, Apple (App Store) or Google (Google Play) process the data of your download and account under their own policies. The developer receives from them, at most, aggregated and anonymous statistics (installs, versions, countries). Medipop sends them no data and receives none from the app.</p>
+  <p>When you download the app, Apple (App Store) or Google (Google Play) process the data of your download and account under their own policies. The developer receives from them, at most, aggregated and anonymous statistics (installs, versions, countries). Medipop sends them no data and receives none from the app. The text recognition libraries of Apple (Vision) and Google (ML Kit) work on the phone, and Medipop sends them nothing.</p>
 
   <h2>This website</h2>
   <p>medipop.app is a website of static pages only, hosted by OVHcloud in France: no cookies, no analytics, no scripts, no content from other sites. Like every web server, OVHcloud's records the IP address and the requested page in its technical logs, for security and to run the service, and keeps them under its own rules. The developer does not use these logs for anything else.</p>
 
   <h2>Security</h2>
-  <p>AES-256 encryption of the database and of backup files; keys in the phone's protection system; app lock with fingerprint or PIN; no screenshots while the app is open (on Android) and no preview in recent apps. No system is perfect: on a rooted or jailbroken phone, or if someone knows your recovery code and has one of your backups, the data can be read. If you lose the recovery code and the phone, nobody, not even the developer, can give your data back.</p>
+  <p>AES-256 encryption of the database and of backup files; the pages of certificates are encrypted like the database (AES-256-GCM, one key per page); keys in the phone's protection system; app lock with fingerprint or PIN; no screenshots while the app is open (on Android) and no preview in recent apps. No system is perfect: on a rooted or jailbroken phone, or if someone knows your recovery code and has one of your backups, the data can be read. If you lose the recovery code and the phone, nobody, not even the developer, can give your data back.</p>
 
   <h2>Sources of the medicine list</h2>
   <p>The list of medicine names inside the app is built from public sources (see the <a href="index.html#sources">home page</a>). It works without connecting to any service.</p>

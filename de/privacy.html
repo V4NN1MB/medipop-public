@@ -35,7 +35,7 @@
 <div class="wrap narrow doc">
 <div class="sheet">
   <h1>Datenschutzerklärung</h1>
-  <p class="muted">Letzte Aktualisierung: 24. November 2026. Die italienische Fassung ist das Original; dies ist eine Übersetzung.</p>
+  <p class="muted">Letzte Aktualisierung: 27. November 2026. Die italienische Fassung ist das Original; dies ist eine Übersetzung.</p>
 
   <p class="lead">Kurz gesagt: Die Daten, die Sie in Medipop schreiben, bleiben verschlüsselt auf Ihrem Telefon. Der Entwickler erhält sie nicht, kann sie nicht lesen und hat keinen Server, auf dem er sie aufbewahren könnte. Das Einzige, was ihn erreichen kann, ist eine E-Mail, die Sie ihm selbst schreiben.</p>
 
@@ -43,7 +43,7 @@
   <p>Medipop wird von Vanni M. entwickelt, einem einzelnen Entwickler. Kontakt für Datenschutz und Support: <strong>medipop.app@gmail.com</strong>.</p>
 
   <h2>Die Daten, die Sie in der App eingeben</h2>
-  <p>Medipop bewahrt auf, was Sie schreiben: Personen und Tiere, Krankheiten, Arztbesuche, Behandlungen, Impfungen, gekaufte Medikamente, Notizen. Das sind Gesundheitsdaten, und deshalb behandelt die App sie mit besonderer Sorgfalt:</p>
+  <p>Medipop bewahrt auf, was Sie schreiben: Personen und Tiere, Krankheiten, Arztbesuche, Behandlungen, Impfungen, gekaufte Medikamente, Notizen und, ab Version 1.1, ärztliche Atteste mit den Fotos ihrer Seiten. Das sind Gesundheitsdaten, und deshalb behandelt die App sie mit besonderer Sorgfalt:</p>
   <ul>
     <li>Sie bleiben <strong>nur auf Ihrem Telefon</strong>, in einer verschlüsselten Datenbank (AES-256, SQLCipher);</li>
     <li>die App hat <strong>keinen Internetzugriff</strong> (sie hat nicht die Berechtigung, sich zu verbinden) und hat weder ein Konto noch einen Server;</li>
@@ -55,8 +55,18 @@
   <h3>Kinder</h3>
   <p>Medipop ist für Erwachsene gedacht. Eltern können die Gesundheitsdaten ihrer Kinder in ihrer eigenen Familienakte erfassen, wie in einem privaten Heft: Die App richtet sich nicht an Minderjährige, fragt nicht nach deren Alter und legt für sie keine Konten an.</p>
 
+  <h3>Fotos der Atteste und Lesen des Textes (ab Version 1.1)</h3>
+  <p>Ab Version 1.1 können Sie ärztliche Atteste in Medipop aufbewahren und jedem Seiten hinzufügen: Sie fotografieren sie, wählen ein Foto aus der Galerie oder importieren ein PDF.</p>
+  <ul>
+    <li>Kamera: Auf Android nimmt die Kamera-App des Telefons das Foto auf, und Medipop fragt nach keiner Berechtigung für die Kamera; auf dem iPhone fragt Medipop beim ersten Fotografieren nach der Berechtigung für die Kamera.</li>
+    <li>Speicherung: Jede Seite wird als neu kodiertes Bild ohne Standort- und Kameradaten (EXIF) gespeichert und auf dem Telefon verschlüsselt (AES-256-GCM, ein Schlüssel pro Seite), im selben geschützten Ordner wie die Datenbank. Temporäre Dateien werden sofort gelöscht.</li>
+    <li>Lesen des Textes: Medipop liest den Text der Seiten auf dem Telefon, ohne Internet: auf dem iPhone mit dem Vision-Framework von Apple, auf Android mit der Texterkennung ML Kit von Google, deren Modell in der App enthalten ist. Es wird nichts an Apple, an Google oder an den Entwickler gesendet (die App hat keine Berechtigung für den Internetzugriff). Aus dem Text schlägt Medipop die Art, das Ausstellungsdatum, die Gültigkeit, die Daten und Tage der Abwesenheit und den Arzt vor; Sie bestätigen oder korrigieren jeden Wert. Der erkannte Text wird in der verschlüsselten Datenbank gespeichert und kann im Tagebuch gesucht werden.</li>
+    <li>«Als PDF teilen» erstellt ein PDF mit den Seiten und öffnet das Teilen-Menü des Telefons. Nach dem Teilen liegt das PDF ausserhalb von Medipop und ist nicht verschlüsselt: Wer es erhält, kann es lesen. Das temporäre PDF wird danach vom Telefon gelöscht.</li>
+  </ul>
+
   <h2>Die Sicherungen</h2>
   <p>Eine Sicherung ist eine verschlüsselte Datei <code>.medipop</code>. Sie erstellen sie, und Sie bestimmen, wohin sie geht: das Speicherfenster des Telefons oder das Teilen-Menü (WhatsApp, E-Mail, Drive...). Medipop sendet sie nicht von selbst an jemanden. Die Datei ist verschlüsselt: Wer sie erhält, öffnet sie nur mit Medipop und Ihrem Wiederherstellungscode oder dem Familiencode. Ab diesem Moment steht die Datei unter der Kontrolle des von Ihnen gewählten Dienstes (zum Beispiel Ihres E-Mail-Anbieters oder Ihrer Cloud) und seiner Bedingungen; wer den Dienst betreibt, kann sehen, dass die Datei existiert, wie gross sie ist und an wen Sie sie gesendet haben, aber nicht den Inhalt. Die Sicherungen, die Sie erstellen, bleiben dort, wo Sie sie abgelegt haben, bis Sie sie löschen.</p>
+  <p>Die Einträge der Atteste reisen wie die anderen Einträge in den verschlüsselten Sicherungen <code>.medipop</code>, aber die Fotos der Seiten sind vorerst nicht in den Sicherungen: Sie bleiben nur auf dem Telefon, auf dem Sie sie hinzugefügt haben.</p>
   <p>Der Familiencode ermöglicht es den Telefonen zweier Elternteile, die Sicherungen des jeweils anderen zu lesen. Wer den Code und eine Sicherung hat, kann die Daten lesen: Geben Sie ihn nur vertrauenswürdigen Personen.</p>
 
   <h2>Daten löschen</h2>
@@ -100,13 +110,13 @@
   <p>Für die E-Mails, die Sie uns gesendet haben, können Sie Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und, soweit anwendbar, Datenübertragbarkeit verlangen: Schreiben Sie einfach an medipop.app@gmail.com. Wir antworten innerhalb eines Monats. Sie haben auch das Recht, sich an die Aufsichtsbehörde zu wenden: in Italien an den Garante per la protezione dei dati personali (garanteprivacy.it); in der Schweiz an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB, edoeb.admin.ch).</p>
 
   <h2>Apple und Google</h2>
-  <p>Wenn Sie die App herunterladen, verarbeiten Apple (App Store) oder Google (Google Play) die Daten Ihres Downloads und Ihres Kontos nach ihren eigenen Datenschutzerklärungen. Der Entwickler erhält von ihnen höchstens aggregierte und anonyme Statistiken (Anzahl der Installationen, Versionen, Länder). Medipop sendet ihnen keine Daten und erhält keine von der App.</p>
+  <p>Wenn Sie die App herunterladen, verarbeiten Apple (App Store) oder Google (Google Play) die Daten Ihres Downloads und Ihres Kontos nach ihren eigenen Datenschutzerklärungen. Der Entwickler erhält von ihnen höchstens aggregierte und anonyme Statistiken (Anzahl der Installationen, Versionen, Länder). Medipop sendet ihnen keine Daten und erhält keine von der App. Die Texterkennungsbibliotheken von Apple (Vision) und Google (ML Kit) arbeiten auf dem Telefon, und Medipop sendet ihnen nichts.</p>
 
   <h2>Diese Website</h2>
   <p>medipop.app ist eine Website mit ausschliesslich statischen Seiten, gehostet von OVHcloud in Frankreich: keine Cookies, keine Statistiken, keine Skripte, keine Inhalte anderer Websites. Wie jeder Webserver erfasst der von OVHcloud in seinen technischen Protokollen die IP-Adresse und die angeforderte Seite, für die Sicherheit und den Betrieb des Dienstes, und bewahrt sie nach seinen eigenen Regeln auf. Der Entwickler verwendet diese Protokolle für nichts anderes.</p>
 
   <h2>Sicherheit</h2>
-  <p>AES-256-Verschlüsselung der Datenbank und der Sicherungsdateien; Schlüssel im Schutzsystem des Telefons; Sperre der App mit Fingerabdruck oder PIN; keine Bildschirmaufnahme möglich, solange die App geöffnet ist (auf Android), und keine Vorschau in den zuletzt verwendeten Apps. Kein System ist perfekt: Wenn das Telefon «gerootet» ist oder einen Jailbreak hat, oder wenn jemand Ihren Wiederherstellungscode kennt und eine Sicherung von Ihnen hat, kann er die Daten lesen. Wenn Sie den Wiederherstellungscode und auch das Telefon verlieren, kann Ihnen niemand, auch nicht der Entwickler, die Daten zurückgeben.</p>
+  <p>AES-256-Verschlüsselung der Datenbank und der Sicherungsdateien; die Seiten der Atteste sind wie die Datenbank verschlüsselt (AES-256-GCM, ein Schlüssel pro Seite); Schlüssel im Schutzsystem des Telefons; Sperre der App mit Fingerabdruck oder PIN; keine Bildschirmaufnahme möglich, solange die App geöffnet ist (auf Android), und keine Vorschau in den zuletzt verwendeten Apps. Kein System ist perfekt: Wenn das Telefon «gerootet» ist oder einen Jailbreak hat, oder wenn jemand Ihren Wiederherstellungscode kennt und eine Sicherung von Ihnen hat, kann er die Daten lesen. Wenn Sie den Wiederherstellungscode und auch das Telefon verlieren, kann Ihnen niemand, auch nicht der Entwickler, die Daten zurückgeben.</p>
 
   <h2>Quellen der Medikamentenliste</h2>
   <p>Die Liste der Medikamentennamen in der App wurde aus öffentlichen Quellen erstellt (siehe die <a href="index.html#quellen">Startseite</a>). Sie funktioniert, ohne sich mit einem Dienst zu verbinden.</p>
